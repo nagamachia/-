@@ -2,3 +2,4 @@
 .vscode
 *.plt
 .ipynb_checkpoints
+fort.*
