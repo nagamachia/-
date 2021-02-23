@@ -7,8 +7,8 @@ PROGRAM gasket1
     complex(4)::c,z,imag=(0,1.0)
     p0=(/ 0,0 /);p1=(/ 1,0 /);p2=(/ 1,1 /)
     x=0;y=0
-    print *,"ƒtƒ‰ƒNƒ^ƒ‹EƒVƒFƒ‹ƒsƒ“ƒXƒL[‚ÌƒMƒƒƒXƒPƒbƒg"
-!----—””­¶-------------------------
+    print *,"ãƒ•ãƒ©ã‚¯ã‚¿ãƒ«ãƒ»ã‚·ã‚§ãƒ«ãƒ”ãƒ³ã‚¹ã‚­ãƒ¼ã®ã‚®ãƒ£ã‚¹ã‚±ãƒƒãƒˆ"
+!----ä¹±æ•°ç™ºç”Ÿ-------------------------
     call random_seed(size=nRand)
     allocate(seed(nRand))
     call system_clock(count=clock)
@@ -17,7 +17,7 @@ PROGRAM gasket1
     call random_number(rand)
     rand=rand*10
     rand=int(rand)
-!----—”‚É‚æ‚é•ªŠò-------------------
+!----ä¹±æ•°ã«ã‚ˆã‚‹åˆ†å²-------------------
     DO k=1,100000
         IF(mod(rand(k),3.0)==0)then
             p=p0
@@ -26,16 +26,16 @@ PROGRAM gasket1
         ELSE
             p=p2
         END IF
-        x=(x+p(1))/2.0    !--•‰‚Ì’l‚É‚µ‚½‚ç‚¨‚à‚µ‚ë‚¢A‘å‚«‚­‚·‚é‚Æ‚Â‚Ü‚ç‚È‚¢B
+        x=(x+p(1))/2.0    !--è² ã®å€¤ã«ã—ãŸã‚‰ãŠã‚‚ã—ã‚ã„ã€å¤§ããã™ã‚‹ã¨ã¤ã¾ã‚‰ãªã„ã€‚
         y=(y+p(2))/2.0
         write(10,*) x,y
     END DO
 !----GNUPLOT--------------------------
     open(13,file="gnuplotdummy.plt")
-        write(13,*) "reset           #‰Šú‰»"
-        write(13,*) "plot 'fort.10' with dots #ƒvƒƒbƒg"
+        write(13,*) "reset           #åˆæœŸåŒ–"
+        write(13,*) "plot 'fort.10' with dots #ãƒ—ãƒ­ãƒƒãƒˆ"
 !        write(13,*) "set term x11 1"
-        write(13,*) 'pause -1 "click OK to quit gnuplot" #•\¦‚³‚¹‘±‚¯‚é'
+        write(13,*) 'pause -1 "click OK to quit gnuplot" #è¡¨ç¤ºã•ã›ç¶šã‘ã‚‹'
     close(13)
         call system("gnuplot gnuplotdummy.plt")
 END

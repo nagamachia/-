@@ -3,7 +3,7 @@ PROGRAM Manderlblot
     integer::i,j,flag,l,imax=300,iter
     real(8)::x,y,dx,dy,n
     complex(8)::c,z,imag=(0d0,1.0d0)
-DO iter=1,5 !ŒJ‚è•Ô‚µ‰ñ”‚Í5‰ñ
+DO iter=1,5 !ç¹°ã‚Šè¿”ã—å›æ•°ã¯5å›
     dx=2.0d0/imax
     dy=2.0d0/imax
     DO i=-imax,imax
@@ -14,7 +14,7 @@ DO iter=1,5 !ŒJ‚è•Ô‚µ‰ñ”‚Í5‰ñ
         z=(0.0d0,0.0d0)
         flag=0
         DO l=1,200
-            !z=((exp(z)-exp(-z*iter))/2.0d0)**iter+c !‘Q‰»®
+            !z=((exp(z)-exp(-z*iter))/2.0d0)**iter+c !æ¼¸åŒ–å¼
             z=tan(z**iter**iter)+c
             IF(abs(z)>2.0d0)then
                 flag=1
@@ -27,20 +27,20 @@ DO iter=1,5 !ŒJ‚è•Ô‚µ‰ñ”‚Í5‰ñ
     END DO
     END DO
 END DO
-!ˆÈ‰ºAgnuplot‚ÅƒOƒ‰ƒt‚ğ•`‚©‚¹ApngŒ`®‚Å•Û‘¶‚µ‚Ü‚·B
+!ä»¥ä¸‹ã€gnuplotã§ã‚°ãƒ©ãƒ•ã‚’æã‹ã›ã€pngå½¢å¼ã§ä¿å­˜ã—ã¾ã™ã€‚
     open(13,file="gnupdummy.plt")
-        write(13,*) "reset       #‰Šú‰»"
-        write(13,*) "plot 'fort.10' with dots #ƒvƒƒbƒg"
+        write(13,*) "reset       #åˆæœŸåŒ–"
+        write(13,*) "plot 'fort.10' with dots #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 1"
-        write(13,*) "plot 'fort.20' with dots #ƒvƒƒbƒg"
+        write(13,*) "plot 'fort.20' with dots #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 2"
-        write(13,*) "plot 'fort.30' with dots #ƒvƒƒbƒg"
+        write(13,*) "plot 'fort.30' with dots #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 3"
-        write(13,*) "plot 'fort.40' with dots #ƒvƒƒbƒg"
+        write(13,*) "plot 'fort.40' with dots #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 4"
-        write(13,*) "plot 'fort.50' with dots #ƒvƒƒbƒg"
+        write(13,*) "plot 'fort.50' with dots #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 5"
-        write(13,*) 'pause -1 "click OK to quit gnuplot" #•\¦‚³‚¹‘±‚¯‚é'
+        write(13,*) 'pause -1 "click OK to quit gnuplot" #è¡¨ç¤ºã•ã›ç¶šã‘ã‚‹'
     close(13)
     call system("gnuplot gnupdummy.plt")
 END

@@ -6,12 +6,12 @@ PROGRAM fractal2
     real(4)::left(2),right(2),up(2),down(2),path(2),r(2),select
     left=(/-1.0,0.0/);right=(/1.0,0.0/);up=(/0.0,1.0/);down=(/0.0,-1.0/)
     x=0;y=0;r=(/x,y/)
-    print *,"Œ´“_‚©‚ç‚Ìƒ‰ƒ“ƒ_ƒ€ƒEƒH[ƒN"
+    print *,"åŸç‚¹ã‹ã‚‰ã®ãƒ©ãƒ³ãƒ€ãƒ ã‚¦ã‚©ãƒ¼ã‚¯"
 
     call random_seed(size=nRand)
     allocate(seed(nRand))
     DO loop=1,5
-    !----—””­¶-------------------------
+    !----ä¹±æ•°ç™ºç”Ÿ-------------------------
         call system_clock(count=clock)
         seed=clock
         call random_seed(put=seed)
@@ -19,40 +19,40 @@ PROGRAM fractal2
         rand=rand*10
     !   rand=int(rand)
     !-------------------------------------
-        cleft=0;cup=0;cright=0;cdown=0!ƒJƒEƒ“ƒ^[‰Šú‰»
+        cleft=0;cup=0;cright=0;cdown=0!ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼åˆæœŸåŒ–
         DO k=1,20000
-            IF(0<rand(k) .and. rand(k)<2.5)then!1/4‚ÌŠm—¦‚Å¶AãA‰EA‰º‚ğ‘I‚Ô
-                path=left!¶‚Öi‚Ş
+            IF(0<rand(k) .and. rand(k)<2.5)then!1/4ã®ç¢ºç‡ã§å·¦ã€ä¸Šã€å³ã€ä¸‹ã‚’é¸ã¶
+                path=left!å·¦ã¸é€²ã‚€
                 cleft=cleft+1
             ELSEIF(2.5<rand(k) .and. rand(k)<5.0)then
-                path=up!ã‚Öi‚Ş
+                path=up!ä¸Šã¸é€²ã‚€
                 cup=cup+1
             ELSEIF(5.0<rand(k) .and. rand(k)<7.5)then
-                path=right!‰E‚Öi‚Ş
+                path=right!å³ã¸é€²ã‚€
                 cright=cright+1
             ELSEIF(7.5<rand(k) .and. rand(k)<10.0)then
-                path=down!‰º‚Öi‚Ş
+                path=down!ä¸‹ã¸é€²ã‚€
                 cdown=cdown+1
             END IF
             r=r+path
             write(10*loop,*) r
         END DO
-        print *,"¶",cleft,"ã",cup,"‰E",cright,"‰º",cdown
+        print *,"å·¦",cleft,"ä¸Š",cup,"å³",cright,"ä¸‹",cdown
     END DO
 !----GNUPLOT------------------------
     OPEN(13,file="gnupdummy.plt")
-        write(13,*) "reset       #‰Šú‰»"
-        write(13,*) "plot 'fort.10' with line #ƒvƒƒbƒg"
+        write(13,*) "reset       #åˆæœŸåŒ–"
+        write(13,*) "plot 'fort.10' with line #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 1"
-        write(13,*) "plot 'fort.20' with line #ƒvƒƒbƒg"
+        write(13,*) "plot 'fort.20' with line #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 2"
-        write(13,*) "plot 'fort.30' with line #ƒvƒƒbƒg"
+        write(13,*) "plot 'fort.30' with line #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 3"
-        write(13,*) "plot 'fort.40' with line #ƒvƒƒbƒg"
+        write(13,*) "plot 'fort.40' with line #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 4"
-        write(13,*) "plot 'fort.50' with line #ƒvƒƒbƒg"
+        write(13,*) "plot 'fort.50' with line #ãƒ—ãƒ­ãƒƒãƒˆ"
             write(13,*) "set term windows 5"
-        write(13,*) 'pause -1 "click OK to quit gnuplot" #•\¦‚³‚¹‘±‚¯‚é'
+        write(13,*) 'pause -1 "click OK to quit gnuplot" #è¡¨ç¤ºã•ã›ç¶šã‘ã‚‹'
     close(13)
     call system("gnuplot gnupdummy.plt")
 END

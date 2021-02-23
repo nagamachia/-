@@ -6,12 +6,12 @@
       REAL(8),DIMENSION(:,:),ALLOCATABLE::K                             
       INTEGER::I,J,N                                                    
       
-      !---˜A—§”÷•ª•û’öŽ®‚ÌŠÖ”---!                                        
+      !---é€£ç«‹å¾®åˆ†æ–¹ç¨‹å¼ã®é–¢æ•°---!                                        
       F1(T,X,Y,Z)=10.0D0*(Y-X)                                          
       F2(T,X,Y,Z)=25.0D0*X-Y-X*Z                                        
       F3(T,X,Y,Z)=-(7.0D0/3.0D0)*Z+X*Y                                  
 !-------------------------!                                             
-      !---Œv‘ªŠJŽn---!
+      !---è¨ˆæ¸¬é–‹å§‹---!
       CALL CPU_TIME(T1)
       ALLOCATE(K(4,4))                                                  
       X=X0;Y=Y0;Z=Z0                                                    

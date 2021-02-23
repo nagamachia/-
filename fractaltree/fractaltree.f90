@@ -6,11 +6,11 @@ PROGRAM fractal_tree
     INTEGER::i,clock,nRand
     INTEGER::N=50000,c1=0,c2=0,c3=0,c4=0,c5=0,c6=0
     INTEGER,allocatable::flag(:),seed(:)
-    !---ƒpƒ‰ƒ[ƒ^---!
+    !---ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿---!
     a=(/0.05d0,0.6d0,0.05d0,-0.5d0,1.0d0,0.46d0,-0.15d0,0.39d0,&
     &0.38d0,0.6d0,0.47d0,0.15d0,0.17d0,0.42d0,1.1d0,0.43d0,0.28d0,&
     &-0.25d0,0.45d0,1.0d0,0.42d0,0.26d0,-0.35d0,0.31d0,0.7d0 /)
-    !---—””­¶randƒxƒNƒgƒ‹---!
+    !---ä¹±æ•°ç™ºç”Ÿrandãƒ™ã‚¯ãƒˆãƒ«---!
     allocate(rand(N),flag(N))
     call random_seed(size=nRand)
     allocate(seed(nRand))
@@ -18,9 +18,9 @@ PROGRAM fractal_tree
     seed=clock
     call random_seed(put=seed)
     call random_number(rand)
-    !---randƒxƒNƒgƒ‹‚ğ‹æŠÔ‚Ì‘å‚«‚³‚ÉŠ„‚è“–‚Ä‚é---!
+    !---randãƒ™ã‚¯ãƒˆãƒ«ã‚’åŒºé–“ã®å¤§ãã•ã«å‰²ã‚Šå½“ã¦ã‚‹---!
     rand=rand*L
-    !---ğŒ•ªŠò---!
+    !---æ¡ä»¶åˆ†å²---!
     DO i=1,N
         IF(rand(i) .ge. 0.0d0 .and. rand (i) .le. 10.0d0)THEN
             flag(i)=1
@@ -42,7 +42,7 @@ PROGRAM fractal_tree
             c6=c6+1
         ENDIF
     END DO
-    !---‘Q‰»®‚©‚çŸ‚Ì“_‚ğƒvƒƒbƒg---!
+    !---æ¼¸åŒ–å¼ã‹ã‚‰æ¬¡ã®ç‚¹ã‚’ãƒ—ãƒ­ãƒƒãƒˆ---!
     x=0.5d0;y=0.0d0
     WRITE(10,*) x,y
     DO i=1,N
