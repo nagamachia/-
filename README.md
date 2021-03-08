@@ -15,7 +15,7 @@ Refered to the tweet below.
 ## lorenz
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">散逸系カオスの一つ、ローレンツカオス。気象の対流の研究から生まれたにゃ〜っ緑線と赤線はわずかに違う初期値からスタートした線だよっ（プログラムのタイトルが「フラクタル」とあるけど、フラクタルじゃないから気をつけてにゃっ！） <a href="https://t.co/mDlE2JnLmO">pic.twitter.com/mDlE2JnLmO</a></p>&mdash; 物理学科に入学した凛ちゃんbot (@RinPhysBot) <a href="https://twitter.com/RinPhysBot/status/1354344585523204096?ref_src=twsrc%5Etfw">January 27, 2021</a></blockquote>
 
-## manderblot
+## mandelbrot
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">マンデルブロー集合はz^2+cを繰り返して発散しない複素数の点cをプロットすると描けるけど、その条件をz^3、z^4、z^5としたものだよっ 法則性が見えるかにゃっ？ <a href="https://t.co/spgadz0050">pic.twitter.com/spgadz0050</a></p>&mdash; 物理学科に入学した凛ちゃんbot (@RinPhysBot) <a href="https://twitter.com/RinPhysBot/status/809706547240583168?ref_src=twsrc%5Etfw">December 16, 2016</a></blockquote>
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ことり「さらにっ！tan(z^1^1),tan(z^2^2),...,tan(z^5^5)としたものだよっ、どれも可愛いね♡」<br>凛「どれも禍々しい感じ…ことりちゃんって、よくわからないにゃ〜」<a href="https://t.co/ktoXaDBpcK">pic.twitter.com/ktoXaDBpcK</a></p>&mdash; 物理学科に入学した凛ちゃんbot (@RinPhysBot) <a href="https://twitter.com/RinPhysBot/status/1358353310407827457?ref_src=twsrc%5Etfw">February 7, 2021</a></blockquote>
